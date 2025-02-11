@@ -2,12 +2,12 @@ import { FaRunning } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { typeOfGrid } from '../Grid/Grid';
 
-interface PlayerStats{
+export interface PlayerStats{
   health: number,
   moves: number
 }
 
-function Player() {
+export function Player() {
   const [playerStats, setPlayerStats] = useState<PlayerStats>({
     health: 200,
     moves: 450
@@ -84,7 +84,6 @@ useEffect(() => {
 
   return (
     <div className="player">
-      <FaRunning />
       <div className="health">{playerStats.health}</div>
       <div className="moves">{playerStats.moves}</div>
     </div>
