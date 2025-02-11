@@ -17,38 +17,55 @@ const [playerMoved, setPlayerMoved] = useState<Boolean>(false);
 
 useEffect(() => {
   const handleKeyDown = (event: KeyboardEvent) => {
-    let player: object = document.getElementsByClassName("player");
+    let player: HTMLCollection= document.getElementsByClassName("player");
+    console.log(player);
     let playerLocation: string = player[0].parentElement.id;
-    let currentX: number = Number(playerLocation.split('')[1])
-    let currentY: number = Number(playerLocation.split('')[4])
+    let currentX: number = Number(playerLocation.split(' ')[0].slice(1));
+    let currentY: number = Number(playerLocation.split(' ')[1].slice(1));
+    const topCheck: RegExp = /\by1/;
+    const bottomCheck: RegExp = /\by100/;
+    const leftCheck: RegExp = /\bx1/;
+    const rightCheck: RegExp = /\bx100/;
+    console.log(currentX)
+    console.log(currentY)
     
     if (event.key === 'ArrowUp') {
-      if(playerLocation.includes("y1")){
+      console.log(playerLocation);
+      if(playerLocation.match(topCheck)){
         alert("You are at the edge of the board");
       } else{
         document.getElementById(`x${currentX} y${currentY - 1}`)?.appendChild(player[0]);
+        console.log(playerLocation);
       }
     } else if (event.key === 'ArrowDown') {
-        if(playerLocation.includes("y10")){
+        console.log(playerLocation);
+      if(playerLocation.match(bottomCheck)){
           alert("You are at the edge of the board");
         } else{
           document.getElementById(`x${currentX} y${currentY + 1}`)?.appendChild(player[0])
+          console.log(playerLocation);
         }
     } else if (event.key === 'ArrowLeft') {
-      if(playerLocation.includes("x1")){
+      console.log(playerLocation);
+      if(playerLocation.match(leftCheck)){
         alert("You are at the edge of the board");
-      } else if(playerLocation.includes("y10")){
-        document.getElementById(`x${currentX - 1} y10`)?.appendChild(player[0]);
+      } else if(playerLocation.match(bottomCheck)){
+        document.getElementById(`x${currentX - 1} y100`)?.appendChild(player[0]);
+        console.log(playerLocation);
       } else{
         document.getElementById(`x${currentX - 1} y${currentY}`)?.appendChild(player[0]);
+        console.log(playerLocation);
       }
     } else if (event.key === 'ArrowRight') {
-      if(playerLocation.includes("x10")){
+      console.log(playerLocation);
+      if(playerLocation.match(rightCheck)){
         alert("You are at the edge of the board");
-      } else if(playerLocation.includes("y10")){
-        document.getElementById(`x${currentX + 1} y10`)?.appendChild(player[0])
+      } else if(playerLocation.match(bottomCheck)){
+        document.getElementById(`x${currentX + 1} y100`)?.appendChild(player[0])
+        console.log(playerLocation);
       } else{
         document.getElementById(`x${currentX + 1} y${currentY}`)?.appendChild(player[0])
+        console.log(playerLocation);
       }
     }
     setPlayerMoved(!playerMoved);
