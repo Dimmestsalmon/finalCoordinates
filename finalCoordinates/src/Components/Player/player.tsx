@@ -19,11 +19,11 @@ useEffect(() => {
   const handleKeyDown = (event: KeyboardEvent) => {
     let player: object = document.getElementsByClassName("player");
     let playerLocation: string = player[0].parentElement.id;
-    let currentX: number = Number(playerLocation.split('')[1])
-    let currentY: number = Number(playerLocation.split('')[4])
+    let currentX: number = Number(playerLocation.split(' ')[0].slice(1));
+    let currentY: number = Number(playerLocation.split(' ')[1].slice(1));
     const topCheck: RegExp = /\by1$/;
-    const bottomCheck: RegExp = /\by10/;
-    const leftCheck: RegExp = /\bx1/;
+    const bottomCheck: RegExp = /\by10$/;
+    const leftCheck: RegExp = /\bx1\b/;
     const rightCheck: RegExp = /\bx10/;
     
     if (event.key === 'ArrowUp') {
