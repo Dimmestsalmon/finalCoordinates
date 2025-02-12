@@ -9,8 +9,8 @@ interface PlayerStats{
 
 function Player() {
   const [playerStats, setPlayerStats] = useState<PlayerStats>({
-    health: 200,
-    moves: 450
+    health: 2000000000,
+    moves: 4500000000000
   });
 
 const [playerMoved, setPlayerMoved] = useState<Boolean>(false);
@@ -21,31 +21,35 @@ useEffect(() => {
     let playerLocation: string = player[0].parentElement.id;
     let currentX: number = Number(playerLocation.split('')[1])
     let currentY: number = Number(playerLocation.split('')[4])
+    const topCheck: RegExp = /\by1$/;
+    const bottomCheck: RegExp = /\by10/;
+    const leftCheck: RegExp = /\bx1/;
+    const rightCheck: RegExp = /\bx10/;
     
     if (event.key === 'ArrowUp') {
-      if(playerLocation.includes("y1")){
+      if(playerLocation.match(topCheck)){
         alert("You are at the edge of the board");
       } else{
         document.getElementById(`x${currentX} y${currentY - 1}`)?.appendChild(player[0]);
       }
     } else if (event.key === 'ArrowDown') {
-        if(playerLocation.includes("y10")){
+      if(playerLocation.match(bottomCheck)){
           alert("You are at the edge of the board");
         } else{
           document.getElementById(`x${currentX} y${currentY + 1}`)?.appendChild(player[0])
         }
     } else if (event.key === 'ArrowLeft') {
-      if(playerLocation.includes("x1")){
+      if(playerLocation.match(leftCheck)){
         alert("You are at the edge of the board");
-      } else if(playerLocation.includes("y10")){
+      } else if(playerLocation.match(bottomCheck)){
         document.getElementById(`x${currentX - 1} y10`)?.appendChild(player[0]);
       } else{
         document.getElementById(`x${currentX - 1} y${currentY}`)?.appendChild(player[0]);
       }
     } else if (event.key === 'ArrowRight') {
-      if(playerLocation.includes("x10")){
+      if(playerLocation.match(rightCheck)){
         alert("You are at the edge of the board");
-      } else if(playerLocation.includes("y10")){
+      } else if(playerLocation.match(bottomCheck)){
         document.getElementById(`x${currentX + 1} y10`)?.appendChild(player[0])
       } else{
         document.getElementById(`x${currentX + 1} y${currentY}`)?.appendChild(player[0])
