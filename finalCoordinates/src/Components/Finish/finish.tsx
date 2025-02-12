@@ -3,8 +3,7 @@ import { GiFinishLine } from "react-icons/gi";
 
 function Finish() {
   return (
-    <div className="finish">
-    </div>
+    <div className="finish"></div>
   )
 }
 
