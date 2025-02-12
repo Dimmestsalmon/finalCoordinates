@@ -18,7 +18,6 @@ const [playerMoved, setPlayerMoved] = useState<Boolean>(false);
 useEffect(() => {
   const handleKeyDown = (event: KeyboardEvent) => {
     let player: HTMLCollection= document.getElementsByClassName("player");
-    console.log(player);
     let playerLocation: string = player[0].parentElement.id;
     let currentX: number = Number(playerLocation.split(' ')[0].slice(1));
     let currentY: number = Number(playerLocation.split(' ')[1].slice(1));
