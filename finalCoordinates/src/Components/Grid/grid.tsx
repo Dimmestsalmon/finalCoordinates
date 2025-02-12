@@ -29,6 +29,8 @@ function Grid() {
   let finishSet: boolean = true;
   let x: number = 1;
   let y:number = 1;
+  let player = <div className="player"></div>;
+
 
   
   const gridMaker = () => {
@@ -36,7 +38,7 @@ function Grid() {
       let type=Math.floor(Math.random()*4);
       let gridClass = typeOfGrid[type].name;
       if (playerSet && i == start){
-        grids.push(<div className={`blank grid`} id ={`x${x} y${y}`} key={i}><Player /></div>)
+        grids.push(<div className={`blank grid`} id ={`x${x} y${y}`} key={i}>{player}</div>)
         playerSet = false;
       }
       else if (finishSet && i == finish){

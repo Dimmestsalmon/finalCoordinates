@@ -9,8 +9,8 @@ interface PlayerStats{
 
 function Player() {
   const [playerStats, setPlayerStats] = useState<PlayerStats>({
-    health: 2000000000,
-    moves: 4500000000000
+    health: 200,
+    moves: 450
   });
 
 const [playerMoved, setPlayerMoved] = useState<Boolean>(false);
@@ -87,10 +87,9 @@ useEffect(() => {
 }, [playerMoved]);
 
   return (
-    <div className="player">
-      <FaRunning />
-      <div className="health">{playerStats.health}</div>
-      <div className="moves">{playerStats.moves}</div>
+    <div>
+      <div>Health: {playerStats.health}</div>
+      <div>Moves: {playerStats.moves}</div>
     </div>
   )
 }

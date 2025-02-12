@@ -1,13 +1,19 @@
 import './renderBoard.css'
 import Grid from '../Grid/grid';
 import React, { useEffect } from 'react';
-
-function RenderBoard() {
+import Player from '../Player/player';
+function RenderBoard(playerStats: any) {
+  
   
   return (
     <>
-      <div className="grid-container">
-          <Grid />    
+      <div className="board-container">
+        <div className="grid-container">
+            <Grid />  
+        </div>
+        <div className="player-container">
+          <Player />
+        </div>
       </div>
     </>
   );
