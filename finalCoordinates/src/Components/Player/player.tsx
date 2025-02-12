@@ -9,8 +9,8 @@ export interface PlayerStats{
 
 export function Player() {
   const [playerStats, setPlayerStats] = useState<PlayerStats>({
-    health: 200,
-    moves: 450
+    health: 200000000000000,
+    moves: 450000000000000
   });
 
 const [playerMoved, setPlayerMoved] = useState<Boolean>(false);
@@ -21,9 +21,9 @@ useEffect(() => {
     let playerLocation: string = player[0].parentElement.id;
     let currentX: number = Number(playerLocation.split(' ')[0].slice(1));
     let currentY: number = Number(playerLocation.split(' ')[1].slice(1));
-    const topCheck: RegExp = /\by1/;
-    const bottomCheck: RegExp = /\by100/;
-    const leftCheck: RegExp = /\bx1/;
+    const topCheck: RegExp = /\by1$/;
+    const bottomCheck: RegExp = /\by100$/;
+    const leftCheck: RegExp = /\bx1\b/;
     const rightCheck: RegExp = /\bx100/;
     console.log(currentX)
     console.log(currentY)
