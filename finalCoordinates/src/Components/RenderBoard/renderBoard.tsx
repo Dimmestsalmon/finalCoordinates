@@ -19,10 +19,10 @@ function RenderBoard() {
         </div>
         <div className="spaceModifiers">
           <h1><b>Move Space Modifiers</b></h1>
-          <div>Blank: Health: 0 Move: -1</div>
-          <div>Speeder: Health: 5 Move: 0</div>
-          <div>Lava: Health: 50 Move: 10</div>
-          <div>Mud: Health: 10 Move: 5</div>
+          <div className="blank">Blank: Health: 0 Move: -1</div>
+          <div className='speeder'>Speeder: Health: 5 Move: 0</div>
+          <div className='lava'>Lava: Health: 50 Move: 10</div>
+          <div className='mud'>Mud: Health: 10 Move: 5</div>
         </div>
         <div className="movementKeys">
           <h1><b>Movement Keys</b></h1>
