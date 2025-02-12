@@ -10,9 +10,11 @@
   grid-auto-flow: column;
   grid-template-columns: repeat(100, 1fr);
   grid-template-rows: repeat(100, 1fr);
-  width: 100%;
+  width: 90vh;
   height: 90vh;
   position: absolute;
+  padding-left: 27%;
+  padding-top: 20px; 
 }
 
 
@@ -29,3 +31,6 @@
   bottom: 0;
 }
 
+.movementKeys{
+  
+}
