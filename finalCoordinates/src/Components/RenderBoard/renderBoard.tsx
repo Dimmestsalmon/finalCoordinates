@@ -2,7 +2,7 @@ import './renderBoard.css'
 import Grid from '../Grid/grid';
 import React, { useEffect } from 'react';
 import Player from '../Player/player';
-function RenderBoard(playerStats: any) {
+function RenderBoard() {
   
   
   return (

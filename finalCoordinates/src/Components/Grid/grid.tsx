@@ -23,8 +23,8 @@ export const typeOfGrid: GridType[] =
 function Grid() {
 
   let grids: Element[] = [];
-  let start: number = Math.floor(Math.random()*10)+1;
-  let finish: number = Math.floor(Math.random()*10)+91;
+  let start: number = Math.floor(Math.random()*100)+1;
+  let finish: number = Math.floor(Math.random()*100)+9900;
   let playerSet: boolean = true;
   let finishSet: boolean = true;
   let x: number = 1;
