@@ -16,6 +16,8 @@ function RenderBoard() {
         </div>
         <div className="title">
           <h1>Final Coordinates</h1>
+          <div>Blue Square is the player</div>
+          <div>Yellow Square is the goal</div>
         </div>
         <div className="spaceModifiers">
           <h1><b>Move Space Modifiers</b></h1>
