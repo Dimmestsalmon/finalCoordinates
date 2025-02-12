@@ -17,14 +17,14 @@ const [playerMoved, setPlayerMoved] = useState<Boolean>(false);
 
 useEffect(() => {
   const handleKeyDown = (event: KeyboardEvent) => {
-    let player: object = document.getElementsByClassName("player");
+    let player: HTMLCollection= document.getElementsByClassName("player");
     let playerLocation: string = player[0].parentElement.id;
     let currentX: number = Number(playerLocation.split(' ')[0].slice(1));
     let currentY: number = Number(playerLocation.split(' ')[1].slice(1));
     const topCheck: RegExp = /\by1$/;
-    const bottomCheck: RegExp = /\by10$/;
+    const bottomCheck: RegExp = /\by100$/;
     const leftCheck: RegExp = /\bx1\b/;
-    const rightCheck: RegExp = /\bx10/;
+    const rightCheck: RegExp = /\bx100/;
     
     if (event.key === 'ArrowUp') {
       if(playerLocation.match(topCheck)){
@@ -42,7 +42,7 @@ useEffect(() => {
       if(playerLocation.match(leftCheck)){
         alert("You are at the edge of the board");
       } else if(playerLocation.match(bottomCheck)){
-        document.getElementById(`x${currentX - 1} y10`)?.appendChild(player[0]);
+        document.getElementById(`x${currentX - 1} y100`)?.appendChild(player[0]);
       } else{
         document.getElementById(`x${currentX - 1} y${currentY}`)?.appendChild(player[0]);
       }
@@ -50,7 +50,7 @@ useEffect(() => {
       if(playerLocation.match(rightCheck)){
         alert("You are at the edge of the board");
       } else if(playerLocation.match(bottomCheck)){
-        document.getElementById(`x${currentX + 1} y10`)?.appendChild(player[0])
+        document.getElementById(`x${currentX + 1} y100`)?.appendChild(player[0])
       } else{
         document.getElementById(`x${currentX + 1} y${currentY}`)?.appendChild(player[0])
       }
@@ -64,6 +64,7 @@ useEffect(() => {
     document.removeEventListener('keydown', handleKeyDown);
   };
 }, [playerMoved]);
+
 
 useEffect(() => {
   let playerLocation = document.getElementsByClassName("player")[0].parentElement.id;
