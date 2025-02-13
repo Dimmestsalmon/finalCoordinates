@@ -89,7 +89,7 @@ useEffect(() => {
 
   return (
     <div>
-      <div>Health: {playerStats.health} Moves: {playerStats.moves}</div>
+      <div className="playerStats">Health: {playerStats.health} Moves: {playerStats.moves}</div>
     </div>
   )
 }
