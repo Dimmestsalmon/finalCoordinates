@@ -34,7 +34,7 @@ function Grid() {
 
   
   const gridMaker = () => {
-    for(let i=1; i<=640000; i++){
+    for(let i=1; i<=4000000; i++){
       let type=Math.floor(Math.random()*4);
       let gridClass = typeOfGrid[type].name;
       if (playerSet && i == start){
@@ -48,7 +48,7 @@ function Grid() {
       else{
         grids.push(<div className={`${gridClass} grid`} id ={`x${x} y${y}`} key={i}></div>)
       }
-      if (y == 800){
+      if (y == 2000){
         y = 0;
         x++;
       }

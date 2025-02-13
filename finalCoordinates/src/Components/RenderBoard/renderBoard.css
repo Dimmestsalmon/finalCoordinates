@@ -8,8 +8,8 @@
 .grid-container {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: repeat(800, 1fr);
-  grid-template-rows: repeat(800, 1fr);
+  grid-template-columns: repeat(2000, 1fr);
+  grid-template-rows: repeat(2000, 1fr);
   width: 100%;
   height: 100%;
   position: absolute;
