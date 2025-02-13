@@ -26,6 +26,16 @@
   width: 100%;
 }
 
+@-webkit-keyframes backgroundColor
+{
+    0%   {background: purple; }
+    20% {background: yellow; }
+    40% {background: pink; }
+    60% {background: green; }
+    80% {background: orange; }
+    100% {background: purple; }
+}
+
 .finish{
   background-color:  #0099ff; 
   animation: blink 2s linear infinite;
@@ -36,14 +46,4 @@
 @keyframes blink {
   1%, 3% {opacity: 0;}
   2%, 4% {opacity: 1;}
-}
-
-@-webkit-keyframes backgroundColor
-{
-    0%   {background: purple; }
-    20% {background: yellow; }
-    40% {background: pink; }
-    60% {background: green; }
-    80% {background: orange; }
-    100% {background: purple; }
 }
